@@ -1,0 +1,9 @@
+[
+    {
+        "selectors":[
+            "Manufacturing", "Contruction materials", "Electronics and Optics " , "Food and Beverage ",  "Bakery & confectionery products ", " Beverage", "Fish & fish products ",  " Meat & meat products",  " Milk & dairy products", "Other ",
+            " Sweet & sback food",  " Furniture",  "Bathroom/sauna ",  "Bedroom ", "Children's room ",  " Kitchen",  "Living room " ,    " Office",  " Other (furniture)",  "Outdoor ",  " Project furniture", "Machinery ",  " Machinery components",  " Machinery equipments/tools" ,
+              " Maritime",  "Aluminium and steel workboats ",  "Boat/Yacht building ",  " Ship repair and conversion",  "Metal structures ",  "Other ", "Metalworking ", " Construction of metal structures",  " Houses and buildings",  " Metal products", "Metal works ", "CNC-machining ", "Forgings, Fasteners ", " Gas, Plasma, laser cutting", " MIG, TIG, Alujminium welding", "Plastic and Rubber ", "Packeging ", "Plastic goods ", " Plastic welding and processing ", " Plastic profiles", " Printing", "Advertising ",  "Books/periodicals printing ", "Labeling and packaging printing ", " Textile and Clothing", " Clothing", "Textile ", "Wood ", "Other(Wood) ", " Wooden building materials", " Wooden houses", " Creative industries", " Energy technology", "Environment ", " Service", "Business Services ", "Engineering ", " Data processing, web portals, E-marketing", "Software, Hardware ", " Telecommunications", " Tourism", "Translation services ", " Transport and Logistics", " Air", "Rail ", " Road","water"
+        ]
+    }
+]
