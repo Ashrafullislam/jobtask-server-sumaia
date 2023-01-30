@@ -35,7 +35,7 @@ async function run() {
       res.send(data)  
     })
 
-    app.get('/alluser/data', async (req,res) => {
+    app.get('/alldata', async (req,res) => {
       const query = {};
       const data = await userdata.find(query).toArray()
       res.send(data)
