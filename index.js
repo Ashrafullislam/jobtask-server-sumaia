@@ -30,11 +30,16 @@ async function run() {
     const userdata = client.db('jobtask_saveData').collection('userData');
     
       app.get('/slots', async(req, res)=> {
-      const data = req.body ;
-      res.send(slot)
+      const query = {};
+      const data = await allSectors.find(query).toArray() ;
+      res.send(data)  
     })
 
-
+    app.get('/alluser/data', async (req,res) => {
+      const query = {};
+      const data = await userdata.find(query).toArray()
+      res.send(data)
+    })
     // save user data in database 
     app.post('/userdata', async(req, res) => {
       const data = req.body ;
