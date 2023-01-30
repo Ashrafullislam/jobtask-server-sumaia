@@ -15,7 +15,8 @@ app.get('/', (req, res) => {
   res.send('User info server running ')
 })
 
-const slot = require ('./slot.json')
+const slot = require ('./slot.json');
+const { application } = require('express');
 
 // MongoDB part 
 
@@ -29,13 +30,6 @@ async function run() {
     const allSectors = client.db('jobtask_saveData').collection('sectors');
     const userdata = client.db('jobtask_saveData').collection('userData');
     
-    // find all sectors option from database 
-    // app.get('/slots', async(req, res)=> {
-    //   const  query = {} ;
-    //   const sector = await allSectors.find(query).toArray();
-    //   res.send(sector)
-    // })
-
       app.get('/slots', async(req, res)=> {
       const data = req.body ;
       res.send(slot)
@@ -51,13 +45,37 @@ async function run() {
       console.log(saveData)
     })
 
-    // gate save data from database 
+    // get save data from database 
     app.get('/userinfo/:email', async(req, res) =>  {
       const email = req.params.email ;
       const query = {email}
       const data = await userdata.findOne(query)
       res.send(data)  
 
+    })
+
+    // update user info 
+    app.put('/userinfo/updateinfo/:email', async(req, res) => {
+      const UserEmail = req.params.email ;
+      const data = req.body ;
+      const name = data.name ;
+      const sectors = data.sectors ;
+      const email = data.email ;
+      const agree = data.agree ;
+      const filter = {email:UserEmail} ;
+      console.log(data,filter)
+      const options = {upsert:true };
+      const updateDoc = {
+        $set: {
+          name:name,
+          slot: sectors,
+          email:email,
+          agree:agree
+         
+        }
+      }
+      const result = await userdata.updateMany(filter,updateDoc,options)
+      res.send(result)
     })
   }
 
