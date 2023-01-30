@@ -23,7 +23,6 @@ const { application } = require('express');
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.rhjlmgh.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
-console.log(uri)
 
 async function run() {
   try{
@@ -70,8 +69,7 @@ async function run() {
           name:name,
           slot: sectors,
           email:email,
-          agree:agree
-         
+          agree:agree 
         }
       }
       const result = await userdata.updateMany(filter,updateDoc,options)
